@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 @Embeddable
 public record Money(
-        @Column(name = "currency", nullable = false)
+
         Currency currency,
         @Column(name = "amount", precision = 19, scale = 4, nullable = false)
         BigDecimal amount

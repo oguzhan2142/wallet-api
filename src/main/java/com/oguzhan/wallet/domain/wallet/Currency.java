@@ -9,7 +9,7 @@ import java.util.Set;
 
 @Embeddable
 public record Currency(
-        @Column(name = "currency")
+        @Column(name = "currency",nullable = false)
         String value
 ) {
 
