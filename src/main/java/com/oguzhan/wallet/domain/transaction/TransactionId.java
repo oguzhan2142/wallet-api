@@ -9,4 +9,7 @@ import java.util.UUID;
 @Embeddable
 public record TransactionId(@Column(name = "id") UUID value) {
 
+    public static TransactionId newId() {
+        return new TransactionId(UUID.randomUUID());
+    }
 }

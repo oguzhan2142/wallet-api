@@ -5,7 +5,7 @@ import com.oguzhan.wallet.domain.user.UserId;
 import com.oguzhan.wallet.domain.user.UserRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface JpaUserRepository extends JpaRepository<User, UserId>, UserRepository {
+public interface UserJpaRepository extends JpaRepository<User, UserId>, UserRepository {
 
 
 }

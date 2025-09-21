@@ -45,4 +45,9 @@ public class Wallet {
     public Money getAmount() {
         return amount;
     }
+
+    public void setAmount(Money updatedBalance) {
+
+        this.amount = updatedBalance;
+    }
 }

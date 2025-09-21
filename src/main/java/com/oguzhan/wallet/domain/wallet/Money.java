@@ -1,6 +1,7 @@
 package com.oguzhan.wallet.domain.wallet;
 
 
+import com.oguzhan.wallet.domain.exceptions.CurrencyMismatch;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
@@ -19,4 +20,18 @@ public record Money(
         return new Money(currency, BigDecimal.ZERO);
     }
 
+    public boolean isNegative() {
+        return amount.compareTo(BigDecimal.ZERO) < 0;
+    }
+
+    public boolean isPositive() {
+        return amount.compareTo(BigDecimal.ZERO) > 0;
+    }
+
+    public Money add(Money other) {
+        if (!other.currency().equals(currency)) {
+            throw new CurrencyMismatch("%s currency and %s currency cannot add each other");
+        }
+        return new Money(currency, amount.add(other.amount));
+    }
 }

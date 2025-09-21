@@ -54,4 +54,46 @@ public class Transaction {
     private OffsetDateTime createdAt;
 
 
+    public Transaction(TransactionId id, UserId userId, TransactionType transactionType, Money transactionAmount, TransactionStatus status, Money balanceBefore, Money balanceAfter, OffsetDateTime createdAt) {
+        this.id = id;
+        this.userId = userId;
+        this.transactionType = transactionType;
+        this.transactionAmount = transactionAmount;
+        this.status = status;
+        this.balanceBefore = balanceBefore;
+        this.balanceAfter = balanceAfter;
+        this.createdAt = createdAt;
+    }
+
+    public TransactionId getId() {
+        return id;
+    }
+
+    public UserId getUserId() {
+        return userId;
+    }
+
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    public Money getTransactionAmount() {
+        return transactionAmount;
+    }
+
+    public TransactionStatus getStatus() {
+        return status;
+    }
+
+    public Money getBalanceBefore() {
+        return balanceBefore;
+    }
+
+    public Money getBalanceAfter() {
+        return balanceAfter;
+    }
+
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
 }
